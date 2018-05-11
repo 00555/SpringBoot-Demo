@@ -18,6 +18,7 @@ import com.loveincode.common.Result;
 import com.loveincode.common.ResultGenerator;
 import com.loveincode.model.Person;
 import com.loveincode.service.PersonService;
+import com.loveincode.utils.ToolsUtil;
 
 @RestController
 @RequestMapping("/person")
@@ -31,20 +32,21 @@ public class PersonController {
     @RequestMapping(method = RequestMethod.POST)
     public Result add(Person person) {
     	logger.info(person.toString());
+    	//person.setId(ToolsUtil.getUUID());
         personService.save(person);
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.genSuccessResult(person);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value="/{id}", method=RequestMethod.DELETE) 
     public Result delete(@PathVariable Integer id) {
         personService.deleteById(id);
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.genSuccessResult(id);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public Result update(@PathVariable String id,Person person) {
+    @RequestMapping(value="/{id}", method=RequestMethod.PUT) 
+    public Result update(@PathVariable Integer id,Person person) {
         personService.update(person);
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.genSuccessResult(person);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)

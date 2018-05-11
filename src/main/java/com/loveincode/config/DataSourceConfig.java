@@ -15,8 +15,8 @@ import com.alibaba.druid.pool.DruidDataSource;
 
 @Configuration
 @Primary // druid can be used firstly
-public class DruidDataSourceConfig {
-	private Logger logger = LoggerFactory.getLogger(DruidDataSourceConfig.class);
+public class DataSourceConfig {
+	private Logger logger = LoggerFactory.getLogger(DataSourceConfig.class);
 
 	@Value("${spring.datasource.url}")
 	private String dbUrl;

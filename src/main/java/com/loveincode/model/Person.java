@@ -7,8 +7,8 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
 
 @Table(name = "t_person")
 public class Person {
+	
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Excel(name="姓名", orderNum="0")
@@ -92,4 +92,11 @@ public class Person {
     public void setBirth(Date birth) {
         this.birth = birth;
     }
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", name=" + name + ", sex=" + sex + ", age=" + age + ", birth=" + birth + "]";
+	}
+    
+    
 }
