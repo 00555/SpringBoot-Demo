@@ -17,13 +17,16 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/", "/home","/person.*").permitAll()
+                .antMatchers("/", "/home").permitAll()
+                .antMatchers("/person/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
+                ////以上代码指定了/和/home不需要任何认证就可以访问，其他的路径都必须通过身份验证。
             .formLogin()
                 .loginPage("/login")
                 .permitAll()
                 .and()
+                //定义当需要用户登录时候，转到的登录页面。
             .logout()
                 .permitAll();
     }

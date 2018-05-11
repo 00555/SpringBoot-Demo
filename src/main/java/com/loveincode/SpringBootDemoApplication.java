@@ -13,8 +13,8 @@ import tk.mybatis.spring.annotation.MapperScan;
 public class SpringBootDemoApplication {
 
 	public static void main(String[] args) {
-		System.out.println("Application start...");
+		System.out.println("<Application start ");
 		SpringApplication.run(SpringBootDemoApplication.class, args);
-		System.out.println("Application started...");
+		System.out.println("Application started >");
 	}
 }
