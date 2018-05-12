@@ -1,2 +1,2 @@
 # SpringBoot-Demo
-SpringBoot Demo学习 SpringMVC+SpringSecurity+MyBatis+RabbitMQ+Swagger Restful API 整合
+SpringBoot Demo学习 （Spring Boot + Spring MVC + Spring Security + MyBatis + RabbitMQ + Swagger + Thymeleaf + Restful API ）整合
